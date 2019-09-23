@@ -1,0 +1,183 @@
+ques 1:
+let ambesh={
+    id1:1,
+    name1:"ambesh",
+     age:21,
+     greet()
+     {
+         console.log("hello gaurav");
+         
+     }
+}
+let gaurav={
+    id:1,
+    name:"ambesh",
+    age:21,
+    greet()
+    {
+        console.log("hello Ambesh");
+        
+    },
+    gender :"male",
+}
+
+console.log(Object.is(ambesh, gaurav)); // this function compare two object are equal or not 
+//console.log(_.isEqual(ambesh,gaurav)); // this function will work only on browser not in console 
+// this function comaparing all the properties of both object
+console.log(ambesh.id1===gaurav.id);
+console.log(ambesh.name==gaurav.name);
+console.log(ambesh.age===gaurav.age);
+console.log(ambesh.greet()===gaurav.greet());
+
+ques 2:
+class ambesh
+ {
+    constructor(name,age)
+    {
+        this.name=name;
+       this.age=age;
+    }
+    greet(name,age)
+    {
+        console.log(`hello to the class my name is ${this.name} and my age is ${this.age} `);
+    }
+}
+class gaurav extends ambesh
+{
+    constructor(age,name)
+    {
+        super(name);
+       this.age=age;
+      // this.name=name
+    }
+     greet(name,age)
+     {
+         console.log("ambesh singh");   
+     }
+     greettwice()
+     {
+         this.greet();
+          this.greet();
+          super.greet();
+          super.greet();
+     }
+
+}
+let a=new gaurav(21,"ambesh");
+  a.greet("gaurav");
+  a.greettwice();
+
+ques 3://Destructing  assignment is new features in ES6 .Destructing providing great features in ES6 which
+//helps us to extract or unpack data or properties from array and objects respectively.Destructing is
+//javascript expression.
+// while extracting data from array we take care of position and while extracting prperties from 
+// object  we take care of name of properties. we can extract properties only by same name as given in 
+//object while in array we can extract data by any name but take care of position of data
+
+// Destructing in array:
+ let input=[10,1,20,30,40,69,86];
+  let [a,b,c]=input  //extracting 3 data from array
+  console.log(a,b,c);
+  let [a1,...d]=input; //extracting single data in one variable ;rest data in another array by using rest operator
+  console.log(a1,d);
+  // swapping of two number by destructing properties
+  let n1=10,n2=20;
+  [n2,n1]=[n1,n2];
+  console.log(n1,n2);
+
+
+
+  //Destructing in objects
+   let obj={
+       name :"Ambesh",
+       age:27,
+       gender:"male",
+       fun1()
+       {
+           console.log(`your name is ${this.name} and your age is  ${this.age} :`);
+           
+       }
+
+   } 
+  let {name,gender,age,fun1:gaurav}=obj;
+  console.log(name);
+  console.log(gender);
+  console.log(age);
+   gaurav();
+   //obj.fun1();
+
+ques4:
+let b=(...c)=>  //rest operator
+{
+    let sum=0;
+    for(let i=0;i<c.length;i++)
+    {
+       sum+=c[i];
+    }
+    return `Total sum equal to is ${sum}`;  // use of template  literal 
+
+}
+console.log(b(10,20,30,40));
+
+//string
+let s1 = 'foo';
+s1[1]="1"
+var s_obj = new String("gaurav");
+s_obj="ambesh";
+console.log(s1);
+console.log(s_obj);
+console.log(typeof s1);
+console.log(typeof s_obj );
+
+let g="amjesh";
+g[2]='b';
+console.log(g.length);
+
+console.log(g[2]);
+
+ques 5:
+let input1=[10,20,30,40,50,80];
+let input2=[30,40,50,40,80,70];
+let a=(b,c)=>
+{
+    let output=[...b,...c]
+     return (output);
+}
+
+
+let arr1= [10,5,6,4,5];
+let arr2= [5,6,45,56,95];
+arr2.map( (input) => {
+    arr1.push(input);
+})
+console.log(arr1);
+
+ques 6:
+
+let check=(input)=>{      
+    let email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    console.log(email.test(input));
+     
+  } 
+        let input="lpuambeshgaurav@gmail.in";
+         check(input);
+
+
+
+   
+
+
+
+
+  
+  
+  
+  
+   
+  
+  
+  
+
+
+
+
